@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Sobre mi";
@@ -44,7 +44,7 @@ const textCase = "uppercase";
 
 	</head>
 	<body>
-        <Navigation/>
+        <Header />
 		<h1>He aquí algunos datos sobre mí:</h1>
 		<ul>
 		  <li>Me llamo {identity.firstName}.</li>
@@ -63,5 +63,8 @@ const textCase = "uppercase";
 
 		{goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
 		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		  </script>
 	</body>
 </html>
