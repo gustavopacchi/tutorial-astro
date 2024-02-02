@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const titulo2 = "prueba de titulo a";
 
 const pageTitle = "Sobre mi";
 
@@ -23,13 +23,7 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Tutorial</title>
+<BaseLayout pageTitle={pageTitle}>
 		<style define:vars={{skillColor, fontWeight, textCase}}>
 			h1 {
 			  color: purple;
@@ -41,10 +35,6 @@ const textCase = "uppercase";
     		text-transform: var(--textCase);
   			}
 		  </style>
-
-	</head>
-	<body>
-        <Header />
 		<h1>He aquí algunos datos sobre mí:</h1>
 		<ul>
 		  <li>Me llamo {identity.firstName}.</li>
@@ -62,9 +52,4 @@ const textCase = "uppercase";
 		{finished && <p>¡He terminado este tutorial!</p>}
 
 		{goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		  </script>
-	</body>
-</html>
+	</BaseLayout>
